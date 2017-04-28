@@ -10,7 +10,7 @@ import os
 #import pprint
 import sklearn as sl
 import numpy as np
-import librosa
+import librosa #是专门用来处理音频和音乐的工具箱，功能蛮多的
 import librosa.feature as f
 import librosa.util as lu
  
