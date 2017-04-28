@@ -72,7 +72,7 @@ help(tanic.loc)
 # In[16]:
 
 #定位SEX属性的行，并且做数值映射 ，替换原来的值.loc[row_indexer,col_indexer] = value instead
-
+#需要先定位约束条件，才能修改该约束条件下的某个值
 tanic.loc[tanic["Sex"]=="male","Sex"]=0
 tanic.loc[tanic["Sex"]=="female","Sex"]=1
 tanic["Sex"].unique()
@@ -437,6 +437,8 @@ print test_tanic["Title"].value_counts()
 
 
 ensemble_sysout=[]
+
+
 #视频中的方法
 for alg,fea in algorithm:
     alg.fit(tanic[fea],tanic["Survived"])
