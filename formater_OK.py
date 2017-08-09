@@ -19,12 +19,12 @@ from __future__ import print_function
 
 SHOW = True # Show test in GUI-based test launcher
 
-import os,shutil
+import os,shutil,datetime
 
 from guidata.dataset.datatypes import DataSet, BeginGroup, EndGroup,GetAttrProp, FuncProp,DataSetGroup
-from guidata.dataset.dataitems import (IntItem, BoolItem,
+from guidata.dataset.dataitems import (IntItem, BoolItem,TextItem,DateTimeItem,
                              MultipleChoiceItem,FilesOpenItem,
-                             StringItem,ColorItem, FileSaveItem,
+                             StringItem,
                              DirectoryItem)
 
 
@@ -47,6 +47,7 @@ Choose according to your function
     PPTnames = FilesOpenItem("Open_files", ("ppt", "pptx"),help="Input your PPT file")##list
     outpath = DirectoryItem("OutDirectory",default=PPTnames._props["data"]["basedir"],help="default is the PPt path")
     outname=StringItem('Outlabel',help="default is the ppt name ")
+    dtime = DateTimeItem("Date/time", default=datetime.datetime(2017, 10, 10))#text = TextItem("Text")
     g1=BeginGroup("Convert_Mode")
 #    outMode = MultipleChoiceItem("",
 #                                  ["Raw", "Resized",
